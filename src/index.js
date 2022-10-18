@@ -1,1 +1,3 @@
-import './style.css';
+import getMenuList from './modules/getMeal.js';
+
+getMenuList();
