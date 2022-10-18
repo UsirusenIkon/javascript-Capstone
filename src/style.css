@@ -1,0 +1,133 @@
+/* $-custom Properties-$ */
+:root {
+  --primary-color: #41bbd9;
+  --secondary-color: #e2f89c;
+  --tetiary-color: #031926;
+  --tetiary-color-2: #797596;
+}
+
+/* $-width-$ */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* $-Track-$ */
+html::-webkit-scrollbar-track {
+  background-color: var(--tetiary-color);
+}
+
+/* $-Handle-$ */
+html::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color-);
+  border-radius: 8px;
+}
+
+/* $-Handle on hover-$ */
+html::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary-color);
+}
+
+/* $-Css-Resets-$ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 0 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--tetiary-color);
+}
+
+button {
+  padding: 0.2em 1em;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  background-color: var(--tetiary-color);
+  color: rgba(0, 255, 255, 0.747);
+}
+
+button:hover {
+  color: var(--primary-color);
+  transform: scale(1.01);
+  transition: all 0.3s ease-in-out;
+}
+
+/* $-Utility-Classes-$ */
+.flex {
+  display: flex;
+}
+
+/* $-Leaderboard-$ */
+.nav {
+  padding: 1rem;
+  justify-content: space-around;
+  background-color: var(--primary-color);
+}
+
+.foods {
+  padding: 1rem;
+}
+
+.food-card {
+  width: max-content;
+}
+
+.like {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* $-modal-$ */
+.modal-filter {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.8s;
+}
+
+.modal-filter.open {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal {
+  position: relative;
+  border: 1px solid;
+  padding: 1rem;
+  width: max-content;
+  transition: 0.7s;
+  transform: scaleX(0);
+}
+
+.modal.open {
+  transform: scaleX(1);
+}
+
+.bx-x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid;
+  border-radius: 30px;
+}
+
+.modal-form {
+  flex-direction: column;
+}
