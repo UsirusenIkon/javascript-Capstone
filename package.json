@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/UsirusenIkon/javascript-Capstone/issues"
   },
-  "homepage": "https://github.com/UsirusenIkon/javascript-Capstone#readme"
+  "homepage": "https://github.com/UsirusenIkon/javascript-Capstone#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.0"
+  }
 }
