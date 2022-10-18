@@ -34,3 +34,4 @@ commentBtn.addEventListener('click', () => {
     modalcontent.classList.remove('open');
   });
 });
+
