@@ -2,15 +2,12 @@ const getMenuList = async () => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '9b12e19dcfmsh710e1ac0dde1a54p13a36bjsnd251b54c2243',
+      'X-RapidAPI-Key': 'a1340d96ebmsh2e9b7fc81699c5ep1cc9f6jsn6c8dc6245a95',
       'X-RapidAPI-Host': 'tasty.p.rapidapi.com',
-
     },
   };
-  await fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
-    .then((response) => response.json())
-    .then((response) => console.log(response))
-    .catch((err) => console.error(err));
+  const response = await fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options);
+  return response;
 };
 
-getMenuList();
+export default getMenuList;
