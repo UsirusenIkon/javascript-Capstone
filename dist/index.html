@@ -4,35 +4,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <title>Document</title>
-<script defer src="runtime.bundle.js"></script><script defer src="index.bundle.js"></script></head>
+<script defer src="runtime.bundle.js"></script><script defer src="main.bundle.js"></script></head>
 <body>
-  <h1>Leader<span>board</span></h1>
-  <section class="leaderboard flex">
-    <div class="score">
-      <div class="scorediv">
-        <div class="recent flex">
-          <span>Recent <span class="color">Scores</span></span>
-          <button class="refresh">Refresh</button>
-        </div>
-        <ul class="scores">
-          <h2>Refresh Leaderboard</h2>
-        </ul>
-      </div>
+  <nav class="nav flex">
+    <div class="logo flex">
+      <i>logo</i>
     </div>
-    <form class="form flex" >
-      <span>Add Your <span class="color">Score</span></span>
-      <label for="Name">
-        <input class="leader user" name="Name" type="text" placeholder="your name" maxlength="30" required>
-      </label>
-      <label for="Point">
-        <input class="leader point" name="Point" type="text" placeholder="your score" maxlength="30" required>
-      </label>
-      <button class="submit" type="submit">submit</button>
-    </form>
+    <ul class="nav-list flex">
+      <li><a href="#">Meal</a></li>
+      <li><a href="#">Recipe</a></li>
+      <li><a href="#">Dish</a></li>
+    </ul>
+  </nav>
+  <section class="foods flex"></section>
+  <section class="modal-filter flex">
+    <div class="modal"></div>
   </section>
-  <footer class="footer flex">
-    <p class="foot">&copy Grey Is Silver</p>
-  </footer>
 </body>
 </html>
