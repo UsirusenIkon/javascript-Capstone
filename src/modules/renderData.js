@@ -6,6 +6,11 @@ import getUserLike from './getLikes.js';
 const renderData = async (arr) => {
   const userLike = await getUserLike();
   const foodList = document.querySelector('.foods');
+  const mealCount = document.createElement('meal-count');
+  const mealItem = document.querySelector('.meal-item');
+
+  mealCount.innerHTML = `<a class="meal-count" href="#">Meal (${arr.length})</a>`;
+  mealItem.appendChild(mealCount);
 
   arr.forEach((card, id) => {
     foodList.innerHTML += `<div class="food-card br flex">
@@ -41,7 +46,7 @@ const renderData = async (arr) => {
         <img class="br" src=${arr[id].thumbnail_url} alt="">
         <div class="summary">
           <span class="name">Name:<i class="desc">${arr[id].name}</i></span>
-          <span class="description">summary:<i class="desc">${arr[id].description}</i></span>
+          <span class="description">summary:<i class="desc">${arr[id].description || 'This taste of this meal will leave you in ecstasy'}</i></span>
         </div>
       </div>
       <span>Comments (${userComment.length || 0})</span>
@@ -58,7 +63,9 @@ const renderData = async (arr) => {
           <button class="submit" type="submit">Comment</i></button>
         </form>
       </div>`;
+      const modalFilter = document.querySelector('.modal-filter');
       const addComment = document.querySelector('.modal-form');
+
       addComment.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.querySelector('.user').value;
@@ -66,19 +73,17 @@ const renderData = async (arr) => {
         postComment(id, name, comment);
         getUserComment(id);
         document.querySelector('.modal-form').reset();
+        modalFilter.classList.remove('open');
+        modalcontent.classList.remove('open');
       });
 
-      const body = document.querySelector('body');
-      const modalFilter = document.querySelector('.modal-filter');
       modalFilter.classList.toggle('open');
       modalcontent.classList.toggle('open');
-      body.classList.toggle('overflow');
 
       const closeBtn = document.querySelector('.bx-x');
       closeBtn.addEventListener('click', () => {
         modalFilter.classList.remove('open');
         modalcontent.classList.remove('open');
-        body.classList.toggle('overflow');
       });
     }));
   });
