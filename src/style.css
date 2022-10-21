@@ -90,6 +90,16 @@ button:hover {
   background-color: var(--secondary-color);
 }
 
+h1 {
+  margin: 3rem auto;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--secondary-color);
+  width: max-content;
+  filter: drop-shadow(1px 1px 1px);
+  /* text-shadow: 1px 1px 1px var(--tetiary-color); */
+}
+
 .foods {
   padding: 1rem;
   flex-wrap: wrap;
@@ -193,4 +203,10 @@ button:hover {
 
 .name {
   display: block;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  padding: 1rem 0;
+  text-align: center;
 }
