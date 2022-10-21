@@ -76,7 +76,6 @@ const renderData = async (arr) => {
         modalFilter.classList.remove('open');
         modalcontent.classList.remove('open');
       });
-
       modalFilter.classList.toggle('open');
       modalcontent.classList.toggle('open');
 
