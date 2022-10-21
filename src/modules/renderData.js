@@ -32,7 +32,7 @@ const renderData = (arr) => {
           <span class="description">summary:<i class="desc">${arr[id].description}</i></span>
         </div>
       </div>
-      <span>Comments(${userComment.length})</span>
+      <span class="count">Comments(${userComment.length})</span>
       <div class="comments">${userComment.length >= 1
     ? userComment.map((user) => `<p>${user.creation_date} ${user.username} : ${user.comment}</p>`).join(' ') : '<p> "make a comment" </p>'}</div>
       <div class="comment-form">
