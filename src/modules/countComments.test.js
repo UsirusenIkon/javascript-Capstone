@@ -1,4 +1,4 @@
-import commentsCounter from './__mock__/countComments.js';
+import commentsCounter from './__mock__/commentCounter.js';
 
 describe('test on foods items comments', () => {
   test('comments count should be three', () => {
