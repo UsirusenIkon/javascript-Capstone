@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-## Leaderboard
+## Great Meals Kitchen
 
 ## Description 
    - This is a Food website built with html css and javaScript. It is based on an external API
