@@ -5,7 +5,7 @@
 ## Description 
    - This is a Food website built with html css and javaScript. It is based on an external API
 
-## <a href="https://usirusenikon.github.io/Leaderboard/dist/">Live Demo</a>
+## <a href="https://usirusenikon.github.io/javascript-Capstone/dist/">Live Demo</a>
 
   The objectives of this project is to:
    - Use JavaScript to make websites dynamic and build basic single page apps.
