@@ -97,7 +97,6 @@ h1 {
   background-color: var(--secondary-color);
   width: max-content;
   filter: drop-shadow(1px 1px 1px);
-  /* text-shadow: 1px 1px 1px var(--tetiary-color); */
 }
 
 .foods {
