@@ -4,6 +4,12 @@
 
 ## Description 
    - This is a Food website built with html css and javaScript. It is based on an external API
+  
+   - This is the page view:
+   
+> |     | Mobile version                             | Desktop version                            |     |
+> | --- | ------------------------------------------ | -------------------------------------------| --- |
+> |     | ![screenshot](asset/mobile.png)            | ![screenshot](asset/desktop.png)           |     |
 
 ## <a href="https://usirusenikon.github.io/javascript-Capstone/dist/">Live Demo</a>
 
