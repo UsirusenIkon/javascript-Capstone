@@ -5,10 +5,10 @@ const postUserLike = async (id) => {
       item_id: id,
     }),
     headers: {
-      'Content-Type': 'application.json',
+      'Content-Type': 'application/json',
     },
   };
-  await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/utOrKhSxTqTA0ApdC0r4/likes', dataToPost)
-    .then((response) => response.json());
+  await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/R1NTK1RCSA5nplnJoZlY/likes', dataToPost);
 };
-postUserLike();
+
+export default postUserLike;
