@@ -34,6 +34,7 @@ html::-webkit-scrollbar-thumb {
 
 body {
   background-color: var(--tetiary-color-2);
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .overflow {
@@ -88,6 +89,17 @@ button:hover {
   padding: 1rem;
   justify-content: space-around;
   background-color: var(--secondary-color);
+}
+
+h1 {
+  margin: 3rem auto;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: var(--secondary-color);
+  width: max-content;
+  filter: drop-shadow(1px 1px 1px);
+  /* stylelint-disable-next-line csstree/validator */
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 .foods {
@@ -193,4 +205,10 @@ button:hover {
 
 .name {
   display: block;
+}
+
+footer {
+  background-color: var(--secondary-color);
+  padding: 1rem 0;
+  text-align: center;
 }
