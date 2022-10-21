@@ -34,6 +34,7 @@ html::-webkit-scrollbar-thumb {
 
 body {
   background-color: var(--tetiary-color-2);
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .overflow {
@@ -97,6 +98,8 @@ h1 {
   background-color: var(--secondary-color);
   width: max-content;
   filter: drop-shadow(1px 1px 1px);
+  /* stylelint-disable-next-line csstree/validator */
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 .foods {
