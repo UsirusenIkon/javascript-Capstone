@@ -1,5 +1,5 @@
 import postComment from './postComments.js';
-import getUserComment, { countUserComment } from './getComments.js';
+import getUserComment from './getComments.js';
 import postUserLike from './postLikes.js';
 import getUserLike from './getLikes.js';
 
@@ -23,7 +23,6 @@ const renderData = (arr) => {
 
       // Get and Count comments
       const userComment = getUserComment(id);
-      const commentCount = countUserComment(id);
 
       modalcontent.innerHTML = `<i class="bx bx-x"></i>
       <div class="content flex">    
@@ -33,7 +32,7 @@ const renderData = (arr) => {
           <span class="description">summary:<i class="desc">${arr[id].description}</i></span>
         </div>
       </div>
-      <span>Comments(${commentCount})</span>
+      <span>Comments(${userComment.length})</span>
       <div class="comments">${userComment.length >= 1
     ? userComment.map((user) => `<p>${user.creation_date} ${user.username} : ${user.comment}</p>`).join(' ') : '<p> "make a comment" </p>'}</div>
       <div class="comment-form">
@@ -56,9 +55,9 @@ const renderData = (arr) => {
         getUserComment(id);
         document.querySelector('.modal-form').reset();
       });
-      document.querySelector('.bxs-heart').addEventListener('click', async () => {
-        await postUserLike();
-        await getUserLike();
+      document.querySelector('.bxs-heart').forEach(btn, id).addEventListener('click', async () => {
+        await postUserLike(id);
+        await getUserLike(id);
       });
       const body = document.querySelector('body');
       const modalFilter = document.querySelector('.modal-filter');
