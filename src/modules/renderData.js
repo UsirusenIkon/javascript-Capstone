@@ -1,29 +1,40 @@
 import postComment from './postComments.js';
-import getUserComment, { countUserComment } from './getComments.js';
+import getUserComment from './getComments.js';
 import postUserLike from './postLikes.js';
 import getUserLike from './getLikes.js';
 
-const renderData = (arr) => {
+const renderData = async (arr) => {
+  const userLike = await getUserLike();
   const foodList = document.querySelector('.foods');
-  arr.forEach((card) => {
+
+  arr.forEach((card, id) => {
     foodList.innerHTML += `<div class="food-card br flex">
     <div class="img flex">
       <img class="br" src=${card.thumbnail_url} alt=${card.thumbnail_alt_text}>
     </div>
     <div class="like flex">
-      <span class="name">Name:<i class="desc">${card.name}</i></span><i  class='bx bxs-heart'></i>
+      <span class="name">Name:<i class="desc">${card.name}</i>
+      </span><i  class='bx bxs-heart'>${userLike[id].likes}</i>
     </div>
     <button class="comment">Comments</button>
     </div>`;
 
+    const like = document.querySelectorAll('.bxs-heart');
+    like.forEach((btn, id) => btn.addEventListener('click', () => {
+      postUserLike(id);
+      getUserLike();
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }));
+
     const commentBtn = document.querySelectorAll('.comment');
 
-    commentBtn.forEach((btn, id) => btn.addEventListener('click', () => {
+    commentBtn.forEach((btn, id) => btn.addEventListener('click', async () => {
       const modalcontent = document.querySelector('.modal');
 
       // Get and Count comments
-      const userComment = getUserComment(id);
-      const commentCount = countUserComment(id);
+      const userComment = await getUserComment(id);
 
       modalcontent.innerHTML = `<i class="bx bx-x"></i>
       <div class="content flex">    
@@ -33,7 +44,7 @@ const renderData = (arr) => {
           <span class="description">summary:<i class="desc">${arr[id].description}</i></span>
         </div>
       </div>
-      <span>Comments(${commentCount})</span>
+      <span>Comments (${userComment.length || 0})</span>
       <div class="comments">${userComment.length >= 1
     ? userComment.map((user) => `<p>${user.creation_date} ${user.username} : ${user.comment}</p>`).join(' ') : '<p> "make a comment" </p>'}</div>
       <div class="comment-form">
@@ -56,10 +67,7 @@ const renderData = (arr) => {
         getUserComment(id);
         document.querySelector('.modal-form').reset();
       });
-      document.querySelector('.bxs-heart').addEventListener('click', async () => {
-        await postUserLike();
-        await getUserLike();
-      });
+
       const body = document.querySelector('body');
       const modalFilter = document.querySelector('.modal-filter');
       modalFilter.classList.toggle('open');
