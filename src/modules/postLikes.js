@@ -1,4 +1,4 @@
-const postUserLike = async (id) => {
+const postLikes = async (id) => {
   const dataToPost = {
     method: 'POST',
     body: JSON.stringify({
@@ -11,4 +11,4 @@ const postUserLike = async (id) => {
   await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/R1NTK1RCSA5nplnJoZlY/likes', dataToPost);
 };
 
-export default postUserLike;
+export default postLikes;

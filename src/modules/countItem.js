@@ -1,7 +1,7 @@
-import getUserLike from './getLikes.js';
+import getLikes from './getLikes.js';
 
 const counterItems = () => {
-  const count = getUserLike.length;
+  const count = getLikes.length;
   return count;
 };
 
