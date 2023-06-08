@@ -1,7 +1,7 @@
 const card = (movies, data) => {
   const cards = document.querySelector('foods');
   cards.innerHTML = '';
-  movies.forEach((movie, id) => {
+  movies.forEach((movie, index) => {
     const id = data.findIndex((like) => +like.item_id === index);
     const msgLikes = id >= 0 ? data[id].likes : 0;
     const innerHTML = `<div class="food-card br flex">
@@ -10,10 +10,11 @@ const card = (movies, data) => {
     </div>
     <div class="like flex">
       <span class="name">Name:<i class="desc">${movie.name}</i>
-      </span><i  class='bx bxs-heart'></i>
+      </span><i  class='bx bxs-heart'>${msgLikes}</i>
     </div>
     <button class="comment">Comments</button>
     </div>`;
+    cards.innerHTML += innerHTML;
   });
 
   const like = document.querySelectorAll('.bxs-heart');
@@ -25,3 +26,5 @@ const card = (movies, data) => {
     }, 2000);
   }));
 };
+
+export default card;
